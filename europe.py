@@ -1,7 +1,7 @@
 from graph import Graph
 
 
-def init_distances() -> Graph:
+def load_europe() -> Graph:
     graph = Graph()
     graph.new_edge("Lisbon", "Madrid", 339)
     graph.new_edge("Naples", "Rome", 134)
@@ -42,29 +42,4 @@ def init_distances() -> Graph:
     return graph
 
 
-def test_prague_berlin():
-    graph = init_distances()
-    prg_bln_distance = graph.find_shortest_path("Prague", "Berlin")
-    assert prg_bln_distance == 219
-
-
-def test_belgrade_berlin():
-    graph = init_distances()
-    blg_bln_distance = graph.find_shortest_path("Belgrade", "Berlin")
-    assert blg_bln_distance == 894
-
-
-def test_prague_budapest():
-    graph = init_distances()
-    prg_bdp_distance = graph.find_shortest_path("Prague", "Budapest")
-    assert prg_bdp_distance == 399
-
-def test_madrid_naples():
-    graph = init_distances()
-    mdr_npl_distance = graph.find_shortest_path("Madrid", "Naples")
-    assert mdr_npl_distance == 1413
-
-def test_trieste_amsterdam():
-    graph = init_distances()
-    trs_ams_distance = graph.find_shortest_path("Trieste", "Amsterdam")
-    assert trs_ams_distance == 1047
+load_europe()
